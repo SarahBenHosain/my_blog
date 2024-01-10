@@ -1,0 +1,37 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+    
+<section class="content-center">
+    <div class="art">
+        <h1>{{ evennement.titre }}</h1>
+        <p>{{ evennement.date | date('d/m/Y')}}</p>
+        <img src="{{asset('img/' ~ evennement.img)}}" alt="">
+        <p>{{ evennement.contenu }}</p>
+
+{% if app.user %}
+
+        <section>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Ajouter</button>
+            {{ form_end(form) }}
+        </section>
+    {% endif %}
+
+<section class="comments"> 
+    <h2>Commentaires</h2>
+
+        {# {% for commentaire in evennement.commentaires %}
+        <p>{{ commentaire.contenu}}</p>
+        {% endfor %} #}
+
+    </section>
+    </div>
+</section>
+
+{% endblock %}

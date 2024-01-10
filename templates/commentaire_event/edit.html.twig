@@ -1,0 +1,14 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Comment{% endblock %}
+
+{% block body %}
+    <h1>Créer un Commentaire</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.commentaire_event) }}
+
+    <button type="submit" class="btn btn-primary">Ajouter Commentaire</button>
+    {{ form_end(form) }}
+{% endblock %}

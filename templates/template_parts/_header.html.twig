@@ -1,0 +1,30 @@
+<header>
+    <div class="container-menu">
+        <div class="icon-container">
+            <img src="{{ asset('img/icon.png') }}" alt="">
+            <div class="dropdown-menu">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                {% else %}
+                <a href="{{ path('app_login') }}">Se connecter</a>
+                <a href="{{ path('app_register') }}">S'inscrire</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="logo">
+            <a href="{{path('app_accueil')}}">
+                <img src="{{ asset ('img/logo.png') }}" alt="">
+            </a>
+        </div>
+        <div class="menu">
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <button class="bsecondary"><a href="{{ path('app_article_index') }}">Tous les articles</a></button>
+                <button><a href="{{ path('app_evennement_index') }}">Événements</a></button>
+            {% else %}
+                <button class="bsecondary"><a href="{{ path('app_articles') }}">Tous les articles</a></button>
+                <button><a href="{{ path('app_evennements') }}">Événements</a></button>
+            {% endif %}
+        </div>
+    </div>
+</header>

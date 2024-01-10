@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EvennementsController!{% endblock %}
+
+{% block body %}
+
+    <section id="cont-evn">
+        {% for evennement in evennements %}
+            <article> 
+                <h2>{{ evennement.titre }}</h2>
+                <img class="event-image" src="{{ asset('img/' ~ evennement.img) }}" alt="">  
+                <button class="toggle-button">Voir les détails</button>
+                <div class="event-details hidden">
+                <p>{{ evennement.date | date('d/m/Y') }}</p>
+                <p>{{ evennement.contenu }}</p>
+                {% for commentaire in evennement.commentaireEvents %}
+                    <p>{{ commentaire.contenu }}</p>
+                {% endfor %}
+                {% if app.user %}
+                    <a href="{{path('app_evennement',{id:evennement.id})}}"> Ajouter un commentaire</a>
+                {% endif %}
+             </div>
+            </article>
+        {% endfor %}
+</section>
+
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+
+            toggleButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const details = button.nextElementSibling;
+                    details.classList.toggle('hidden');
+                });
+            });
+        });
+    </script>
+
+    
+{% endblock %}

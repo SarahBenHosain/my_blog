@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CommentaireEvent index{% endblock %}
+
+{% block body %}
+    <h1>CommentaireEvent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Contenu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commentaire_event in commentaire_events %}
+            <tr>
+                <td>{{ commentaire_event.id }}</td>
+                <td>{{ commentaire_event.contenu }}</td>
+                <td>
+                    <a href="{{ path('app_commentaire_event_show', {'id': commentaire_event.id}) }}">show</a>
+                    <a href="{{ path('app_commentaire_event_edit', {'id': commentaire_event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commentaire_event_new') }}">Create new</a>
+{% endblock %}

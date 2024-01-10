@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Welcome!{% endblock %}</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <script src="{{ asset('js/index.js') }}"></script>
+  {% block stylesheets %}
+  {% endblock %}
+
+  {% block javascripts %}
+  {% endblock %}
+  <script src="{{asset('js/index.js')}}"></script>
+</head>
+
+<body>
+
+  {% include("/template_parts/_header.html.twig") %}
+  <main>
+  <div class="cercles">
+      <div class="cir topleft"></div>
+      <div class="circle topright"></div>
+  </div>
+
+  {% block body %}{% endblock %}
+  </main>
+</body>
+
+</html>

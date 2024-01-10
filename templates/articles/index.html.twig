@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+    
+
+<section id="cont-art">
+
+    {% for article in articles %}
+        <article> 
+            <h2>{{ article.titre }}</h2>
+            <img class="article-image" src="{{ asset('uploads/images/' ~ article.imgSrc) }}" alt="">
+            <button class="toggle-button">Voir les détails</button>
+            <div class="article-details hidden">
+                <p>{{ article.date | date('d/m/Y') }}</p>
+                <p>{{ article.contenu }}</p>
+                    <h1>Commentaires</h1>
+                {% for commentaire in article.commentaires %}
+                    <p>{{ commentaire.contenu }}</p>
+                {% endfor %}
+                {% if app.user %}
+                    <a href="{{path('app_article',{id:article.id})}}"> Ajouter un commentaire</a>
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButtons = document.querySelectorAll('.toggle-button');
+
+        toggleButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const details = button.nextElementSibling;
+                details.classList.toggle('hidden');
+                const image = details.querySelector('.article-image');
+                if (!image.getAttribute('src')) {
+                    image.setAttribute('src', image.getAttribute('data-src'));
+                }
+              button.innerText = details.classList.contains('hidden') ? 'Voir les détails' : 'Masquer les détails';
+            });
+        });
+    });
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
