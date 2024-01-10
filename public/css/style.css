@@ -478,6 +478,10 @@ article a{
     margin-bottom: 100px;
 }
 
+.imgMiniatureAdmin{
+    width: 150px;
+}
+
 .cont{
     flex-direction: column;
 }
@@ -558,19 +562,64 @@ form[name="commentaire_event"] label{
 
 .registration-container{
     display: flex;
+    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 500px;
-    height: 500px;
+    height: 530px;
     border-radius: 20px 20px 20px;
     position: absolute;
-    margin-top: 20%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.211);
+    background-image: url('/img/fond.png');
     border-radius: 20px 20px 20px;
     
+}
+
+.registration-email{
+    margin-left: -20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#registration_form_email{
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.registration-email label.required{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0px;   
+}
+
+.registration-password{
+    display: flex;
+    flex-direction: column;
+    margin-left: -20px;
+}
+
+#registration_form_plainPassword{
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.registration-password label.required{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 60px;
 }
 
 .registration-container h1{
@@ -579,6 +628,7 @@ form[name="commentaire_event"] label{
 
 .registration-container button{
     margin-top: 50px;
+    margin-left: 80px;
 }
 
 .registration-container label{
@@ -587,27 +637,104 @@ form[name="commentaire_event"] label{
     flex-direction: column;
 }
 
-/* form{
-    background-color: #33fff8;
+#registration_form_pseudo {
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.registration-container label.required[for="registration_form_pseudo"] {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 60px;
+    margin-left: -20px;
+}
+
+.login-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 500px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.211);
+    height: 530px;
     border-radius: 20px 20px 20px;
-    margin-top: 200px;
     position: absolute;
-    margin-top: 20%;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    margin-top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 17px;
-} */
+    background-image: url('/img/fond.png');
+    border-radius: 20px 20px 20px;
+}
 
-/* form button{
+.login-email {
+    margin-left: -20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputEmail {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.login-email label.required {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-password {
+    display: flex;
+    flex-direction: column;
+    margin-left: -20px;
+}
+
+#inputPassword {
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+#inputEmail + label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.txtemail{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.login-container h1 {
+    z-index: 1;
+}
+
+.login-container button {
     margin-top: 50px;
-} */
+    margin-left: 30px;
+}
+
+.login-container label {
+    margin-right: 0px;
+    font-size: 17px;
+    flex-direction: column;
+}
+
 
 table{
     padding: 120px 120px 120px;
@@ -635,4 +762,91 @@ td{
     padding-top: 50px;
     padding-bottom: 90px;
     padding-right: 40px;
+}
+
+.txt-nouveau a {
+    margin-left: 45%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #0000ff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.titrenewarticle h1{
+    margin-left: 40%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.btnnew{
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+.form-new{
+    padding-left: 40%;
+}
+
+.form-new label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right:
+}
+
+.form-new input{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 50px;
+    border-radius: 5px;
+} 
+
+#article_titre input{
+    margin-left:100px;
+    padding-right: 30px;
+}
+
+label[for="article_contenu"] {
+    margin-right: 17px;
+}
+
+.txt-nouveauu {
+    margin-left: 45%;
+    margin-bottom: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #0000ff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.table {
+    padding: 120px 120px 120px;
+    z-index: 1;
+}
+
+.article-table-header {
+    background-color: #7300f7;
+    width: 7%;
+    margin-bottom: 40px;
+    padding-bottom: 45px;
+}
+
+.article-table-data {
+    padding-top: 50px;
+    padding-bottom: 90px;
+    padding-right: 300px;
+}
+
+.btn-supp{
+    margin-left: 45%;
+    margin-top: -30px;
 }

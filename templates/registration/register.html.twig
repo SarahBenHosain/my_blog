@@ -9,10 +9,20 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
+  <div class="registration-email">
         {{ form_row(registrationForm.email) }}
+  </div>
+  <div class="registration-password">
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+  </div>
+
+  <div class="registration-pseudo">
+            {{ form_row(registrationForm.pseudo, {
+                label: 'Pseudo'
+            }) }}
+  </div>
         {# {{ form_row(registrationForm.agreeTerms) }} #}
 
         <button type="submit" class="btn">S'inscrire</button>

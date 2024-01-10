@@ -3,8 +3,7 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-
+   
     <table class="table">
         <thead>
             <tr>
@@ -21,7 +20,7 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.titre }}</td>
-                <td>{{ article.imgSrc }}</td>
+                <td><img class='imgMiniatureAdmin' src="{{ asset('uploads/images/' ~ article.imgSrc) }}" alt="photo de l'article"></td>
                 <td>{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
                 <td>{{ article.contenu }}</td>
                 <td>
@@ -36,6 +35,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_article_new') }}">Créer un nouveau</a>
+    <div class="txt-nouveau">
+     <a href="{{ path('app_article_new') }}">Créer un nouveau</a>
+    </div>
 {% endblock %}

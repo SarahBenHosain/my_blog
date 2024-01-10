@@ -46,9 +46,10 @@ class ArticleType extends AbstractType
                 ],
             ])
 
-            ->add('save', SubmitType::class, [
-                'label' => 'Ajouter l\'article',
-            ]);
+            // ->add('save', SubmitType::class, [
+            //     'label' => 'Ajouter l\'article',
+            // ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

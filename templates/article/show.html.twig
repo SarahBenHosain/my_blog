@@ -3,36 +3,39 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
+    <table class="table article-table">
+        <tbody class="article-tbody">
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
+                <th class="article-table-header">Id</th>
+                <td class="article-table-data">{{ article.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ article.titre }}</td>
+                <th class="article-table-header">Titre</th>
+                <td class="article-table-data">{{ article.titre }}</td>
             </tr>
             <tr>
-                <th>ImgSrc</th>
-                <td>{{ article.imgSrc }}</td>
+                <th class="article-table-header">ImgSrc</th>
+                <td class="article-table-data"><img class='imgMiniatureAdmin' src="{{ asset('uploads/images/' ~ article.imgSrc) }}" alt="photo de l'article"></td>
             </tr>
             <tr>
-                <th>Date</th>
-                <td>{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
+                <th class="article-table-header">Date</th>
+                <td class="article-table-data">{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Contenu</th>
-                <td>{{ article.contenu }}</td>
+                <th class="article-table-header">Contenu</th>
+                <td class="article-table-data">{{ article.contenu }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_index') }}">retourner à la liste</a>
+    <a class="txt-nouveauu" href="{{ path('app_article_index') }}">Retourner à la liste</a>
 
-    <a href="{{ path('app_article_edit', {'id': article.id}) }}">editer</a>
+    <a class="txt-nouveauu" href="{{ path('app_article_edit', {'id': article.id}) }}">Éditer</a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
+
+
+
+

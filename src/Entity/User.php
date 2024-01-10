@@ -27,6 +27,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $pseudo = null;
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -99,8 +102,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     private bool $canManageArticles = false;
 
-    #[ORM\Column(length: 255)]
-    private ?string $pseudo = null;
     
     public function setCanManageArticles(bool $canManageArticles): static
     {
